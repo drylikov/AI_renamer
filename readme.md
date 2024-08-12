@@ -1,4 +1,4 @@
-# ai-renamer
+# AI renamer
 
 A Node.js CLI that uses Ollama and LM Studio models (Llava, Gemma, Llama etc.) to intelligently rename files by their contents
 
@@ -26,7 +26,7 @@ You need to have [Ollama](https://ollama.com/download) or [LM Studio](https://lm
 Run with NPX
 
 ```bash
-npx ai-renamer /path
+npx AI_renamer /path
 ```
 
 Run with NPM
@@ -36,7 +36,7 @@ Run with NPM
 npm install -g ai-renamer
 
 # Run it
-ai-renamer /path
+AI_renamer /path
 ```
 
 ## Ollama Usage
@@ -44,7 +44,7 @@ ai-renamer /path
 Ollama is the default provider so you don't have to do anything. You can just run `npx ai-renamer /images`. At the first launch it will try to auto-select the Llava model but if it couldn't do that you can specify the model.
 
 ```bash
-npx ai-renamer /path --provider=ollama --model=llava:13b
+npx AI_renamer /path --provider=ollama --model=llava:13b
 ```
 
 ## LM Studio Usage
@@ -52,7 +52,7 @@ npx ai-renamer /path --provider=ollama --model=llava:13b
 You need to set the provider as `lm-studio` and it will auto-select the loaded model in LM Studio.
 
 ```bash
-npx ai-renamer /path --provider=lm-studio
+npx AI_renamer /path --provider=lm-studio
 ```
 
 ## OpenAI Usage
@@ -60,7 +60,7 @@ npx ai-renamer /path --provider=lm-studio
 You need to set the provider as `openai` and the api-key with your API key and it will auto-select the gpt-4o model. But you can assign any model with `--model` flag.
 
 ```bash
-npx ai-renamer /path --provider=openai --api-key=OPENAI_API_KEY
+npx AI_renamer /path --provider=openai --api-key=OPENAI_API_KEY
 ```
 
 ## Custom Ports
@@ -68,8 +68,8 @@ npx ai-renamer /path --provider=openai --api-key=OPENAI_API_KEY
 If you're using a different port in Ollama or LM Studio you could simply specify the base URLs.
 
 ```bash
-npx ai-renamer /path --provider=ollama --base-url=http://127.0.0.1:11434
-npx ai-renamer /path --provider=lm-studio --base-url=http://127.0.0.1:1234
+npx AI_renamer /path --provider=ollama --base-url=http://127.0.0.1:11434
+npx AI_renamer /path --provider=lm-studio --base-url=http://127.0.0.1:1234
 ```
 
 ## Params
@@ -77,7 +77,7 @@ npx ai-renamer /path --provider=lm-studio --base-url=http://127.0.0.1:1234
 The values of the flags will be saved to your disk when you use them. You can find the config file at `~/ai-renamer.json`. If you're using a Mac it's `/Users/your-user-name/ai-renamer.json`. Also when you set a flag you don't have to use them again. The script gets the values from this config file.
 
 ```bash
-npx ai-renamer --help
+npx AI_renamer --help
 Options:
   -h, --help                    Show help                              [boolean]
       --version                 Show version number                    [boolean]
@@ -120,11 +120,3 @@ sentenceCase: Two words
 snakeCase: two_words
 trainCase: Two-Words
 ```
-
-## Contribution
-
-Feel free to contribute. Open a new [issue](https://github.com/ozgrozer/ai-renamer/issues), or make a [pull request](https://github.com/ozgrozer/ai-renamer/pulls).
-
-## License
-
-[GPL-3.0](https://github.com/ozgrozer/ai-renamer/blob/main/license)
